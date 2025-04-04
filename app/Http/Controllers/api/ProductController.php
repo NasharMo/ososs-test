@@ -6,10 +6,6 @@ use App\Actions\GetCountryCodeFromIpAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GetApplicablePriceRequest;
 use App\Http\Resources\Api\ProductResource;
-use App\Models\Country;
-use App\Models\CountryCurrency;
-use App\Models\PriceList;
-use App\Models\PriceListItem;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Services\ProductService;
@@ -66,32 +62,6 @@ class ProductController extends Controller
      */
     public function show(GetApplicablePriceRequest $request, int $id)
     {
-    //     $country = Country::factory()->create(['code' => 'US', 'name' => 'United States']);
-    // $countryCurrency = CountryCurrency::factory()->create([
-    //     'country_id' => $country->id,
-    //     'currency_id' => null
-    // ]);
-
-    // // Create price list with valid date range
-    // $priceList = PriceList::factory()->create([
-    //     'country_currency_id' => $countryCurrency->id,
-    //     'priority' => 1,
-    //     'start_date' => now()->subDays(1),
-    //     'end_date' => now()->addDays(1),
-    // ]);
-
-    // $product = Product::factory()->create(['base_price' => 100]);
-
-    // // Add price list item
-    // PriceListItem::factory()->create([
-    //     'product_id' => $product->id,
-    //     'price_list_id' => $priceList->id,
-    //     'price' => 90,
-    // ]);
-
-    // return [];
-
-
         try {
             $product = Product::findOrFail($id);
 
