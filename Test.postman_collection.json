@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "ebd82c23-dcc0-42da-80b4-f9fa6bdb7a37",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2897075"
+	},
+	"item": [
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products?order=lowest-to-highest&per_page=5&page=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "lowest-to-highest"
+						},
+						{
+							"key": "per_page",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"illo\",\r\n            \"description\": \"Illum nisi amet odit est eum voluptatem.\",\r\n            \"price\": \"17.91\"\r\n        }\r\n    ],\r\n    \"links\": {\r\n        \"first\": \"http://127.0.0.1:8000/api/products?page=1\",\r\n        \"last\": \"http://127.0.0.1:8000/api/products?page=1\",\r\n        \"prev\": null,\r\n        \"next\": null\r\n    },\r\n    \"meta\": {\r\n        \"current_page\": 1,\r\n        \"from\": 1,\r\n        \"last_page\": 1,\r\n        \"links\": [\r\n            {\r\n                \"url\": null,\r\n                \"label\": \"&laquo; Previous\",\r\n                \"active\": false\r\n            },\r\n            {\r\n                \"url\": \"http://127.0.0.1:8000/api/products?page=1\",\r\n                \"label\": \"1\",\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"url\": null,\r\n                \"label\": \"Next &raquo;\",\r\n                \"active\": false\r\n            }\r\n        ],\r\n        \"path\": \"http://127.0.0.1:8000/api/products\",\r\n        \"per_page\": 10,\r\n        \"to\": 1,\r\n        \"total\": 1\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "getProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products/1?country_code=US&currency_code=USD&date=2025-04-04",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "country_code",
+							"value": "US"
+						},
+						{
+							"key": "currency_code",
+							"value": "USD"
+						},
+						{
+							"key": "date",
+							"value": "2025-04-04"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "NotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1?country_code=US&currency_code=USD&date=2025-04-04",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "country_code",
+									"value": "US"
+								},
+								{
+									"key": "currency_code",
+									"value": "USD"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-04"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"error\": \"Product not found for the current filters\"\r\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1?country_code=US&currency_code=USD&date=2025-04-04",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							],
+							"query": [
+								{
+									"key": "country_code",
+									"value": "US"
+								},
+								{
+									"key": "currency_code",
+									"value": "USD"
+								},
+								{
+									"key": "date",
+									"value": "2025-04-04"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"data\": {\r\n        \"id\": 1,\r\n        \"name\": \"quibusdam\",\r\n        \"description\": \"Nobis voluptatem eos doloremque quam et.\",\r\n        \"price\": \"401.44\"\r\n    }\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
